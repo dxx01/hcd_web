@@ -56,13 +56,15 @@ export default {
       }
       callback()
     }
-    // 电话邮箱处理
+    // 电话处理
     var validatephone = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('手机号不能为空'))
       } else if (!this.ze.phoneZe.test(value)) {
         callback(new Error('无效电话号码'))
       }
+      // 只有电话邮箱这里有效时，改变发送短信按钮状态
+      this.obj.btnStatu = 1
       callback()
     }
     // 密码处理
