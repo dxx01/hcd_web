@@ -1,0 +1,170 @@
+#shouye {
+  margin: 0 auto;
+  max-width: 960px;
+  display: flex;
+  justify-content : space-between;
+  .sy-left {
+    width: 74%;
+    @media (max-width: 950px) {
+      width: 100%;
+    }
+    .header {
+      background-color: white;
+      padding: 0 12px;
+      height: 46px;
+      line-height: 46px;
+      border-bottom: 1px solid hsla(0,0%,59.2%,.1);
+      a {
+        color: #71777c;
+        height: 14px;
+        font-size: 14px;
+        padding: 0 15px;
+        border-right: 1px solid #eaeaea;
+        &:hover {
+          color:#006cff;
+        }
+        &:last-child {
+          border:none;
+        }
+      }
+    }
+    .middle {
+      background-color: white;
+      padding: 18px 24px;
+      border-bottom: 1px solid hsla(0,0%,59.2%,.1);
+      cursor: pointer;
+      .info-list {
+        font-size: 12px;
+        color: #b2bac2;
+        display: flex;
+        span {
+          padding: 0 5px;
+        }
+        a {
+          &:hover {
+            color:#006cff;
+          }
+        }
+        .tags {
+          a{
+            &::after {
+              content: '/';
+              color: rgb(178, 186, 194);
+            }
+            &:last-child {
+              &::after {
+                content: '';
+              }
+            }
+          }
+        }
+      }
+      .info-title {
+        margin: 6px 0 12px;
+        display: block;/*必须有*/
+        white-space: nowrap;/*规定段落中的文本不进行换行*/
+        overflow: hidden;/*来将多出来的字体隐藏*/
+        text-overflow: ellipsis;/*是用来代替的格式*/
+        a {
+          width: 100%;
+          font-size: 16px;
+          font-weight: bolder;
+          color: #2e3135;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .info-icons {
+        display: flex;
+        .info-icon {
+          display: flex;
+          height: 24px;
+          border-radius: 1px;
+          border: 1px solid #edeeef;
+          padding: 0 9px;
+          line-height: 24px;
+          &:hover {
+            background-color: #edeeef4f;
+          }
+          color: #b2bac2;
+          p {
+            text-align: center;
+            margin-left: 3px;
+            font-size: 13px;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+  }
+  .sy-right {
+    width: 24%;
+    @media (max-width: 950px) {
+      display: none;
+    }
+    .ranking {
+      background-color: white;
+      .title {
+        display: flex;
+        justify-content : space-between;
+        padding: 13.6px 12px;
+        border-bottom: 1px solid hsla(0,0%,59.2%,.1);
+        font-size: 14px;
+        font-weight: bolder;
+        .title-right {
+          font-size: 13px;
+          font-weight: initial;
+          color: #71777c;
+          a {
+            cursor: pointer;
+            &:hover {
+              color: #006cff;
+            }
+          }
+        }
+      }
+      .user-list {
+        a {
+          cursor: pointer;
+          display: flex;
+          padding: 12px 15px;
+          div {
+            font-size: 13px;
+            &:first-child {
+              width: 35px;
+              height: 35px;
+              margin-right: 10px;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+            &:last-child {
+              max-width: 155px;
+              span {
+                font-weight: 600;
+              }
+              .dzNum {
+                color: #fd8484;
+                float: right;
+              }
+              p {
+                color: #c0c0c0;
+                display: block;/*必须有*/
+                white-space: nowrap;/*规定段落中的文本不进行换行*/
+                overflow: hidden;/*来将多出来的字体隐藏*/
+                text-overflow: ellipsis;/*是用来代替的格式*/
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 其他的一些样式 */
+.active {
+  color: #006cff !important;
+}
