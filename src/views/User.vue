@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 #lrf-user {
   background-color: #f3f3f3;
   height: 100%;

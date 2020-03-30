@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 module.exports = {
+  // jquery配置
   configureWebpack: {
     plugins: [
       new webpack.ProvidePlugin({

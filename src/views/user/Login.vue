@@ -129,7 +129,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .lrf-lable {
     line-height: 20px;
     font-family: "Hiragino Sans GB";

@@ -6,11 +6,17 @@ Vue.use(VueRouter)
 const routes = [
   { // 项目默认地址
     path: '/',
-    redirect: '/home'
+    redirect: '/shouye'
   },
   { // 主页面地址
     path: '/home',
-    component: () => import('../views/Home.vue')
+    component: () => import('../views/Home.vue'),
+    children: [
+      {
+        path: '/shouye',
+        component: () => import('../views/module/ShouYe.vue')
+      }
+    ]
   },
   { // 用户模块地址
     path: '/user',
