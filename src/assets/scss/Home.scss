@@ -93,13 +93,17 @@ a {
                 line-height: 60px;
                 .header-lr {
                     display: flex;
-                    padding: 9px 10px 0 0;
+                    // padding: 9px 10px 0 0;
                     .login-off{
                         cursor: pointer;
+                        border: none !important;
+                    }
+                    i {
+                        display: none;
                     }
                 }
                 .info-icon {
-                    padding: 2px 30px 0 0;
+                    padding: 2px 10px 0 0;
                     font-size: 23px;
                     color:#858585;
                     cursor: pointer;
@@ -109,6 +113,9 @@ a {
                     padding-right: 30px;
                     margin-top: 15px;
                     line-height: 0;
+                    a {
+                        color: white;
+                    }
                 }
                 .header-search {
                     padding-right: 30px;
@@ -126,5 +133,46 @@ a {
     }
     .middleBox {
         margin-top: 20px;
+    }
+}
+
+//其他一些element模块生成的做处理的做处理的样式
+
+.el-dropdown-link {
+    font-size: 16px;
+    color:#006cff;
+}
+.active-class {
+    color:#006cff !important;
+    a {
+        color:#006cff !important;
+    }
+}
+.dropdown-list {
+    padding: 0 5px;
+    font-size: 16px;
+    color: #71777c;
+    &:hover {
+        color:#006cff;
+    }
+}
+// 登录头像选中下拉选项后会出现蓝色下边框去除
+.el-submenu__title {
+  border: none !important;
+}
+
+// 头像外部下拉框
+.tx {
+    top: 56px !important;
+    .el-menu--popup {
+        min-width: 100px;
+        div {
+            height: 1px;
+            background-color: #beb7bb;
+            margin: 0;
+        }
+        li {
+            text-align: center;
+        }
     }
 }

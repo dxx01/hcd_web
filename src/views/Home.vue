@@ -30,18 +30,29 @@
             <div class="header-right">
                 <div class="header-lr">
                     <div class="login-off" @click="goLogin">
-                        <el-avatar :src="userImg"  size="small"></el-avatar>
+                      <el-menu  mode="horizontal" active-text-color='#909399'>
+                        <el-submenu index="1" popper-class='tx'>
+                            <template slot="title">
+                                <el-avatar :src="userImg"  size="small"></el-avatar>
+                            </template>
+                            <el-menu-item index="1-1">选项1</el-menu-item>
+                            <el-menu-item index="1-2">选项2</el-menu-item>
+                            <el-menu-item index="1-3">选项3</el-menu-item>
+                            <el-divider></el-divider>
+                            <el-menu-item index="1-4">选项4</el-menu-item>
+                        </el-submenu>
+                      </el-menu>
                     </div>
                 </div>
                 <div class="info-icon">
                     <i class="el-icon-bell"></i>
                 </div>
                 <div class="header-create">
-                    <el-dropdown split-button type="primary"  size="small">
-                        创建
+                    <el-dropdown split-button type="primary"  size="small" trigger='click'>
+                        <router-link to="/fabu">发文章</router-link>
                         <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item>发文章</el-dropdown-item>
                         <el-dropdown-item>提问</el-dropdown-item>
+                        <el-dropdown-item>生活</el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
                 </div>
@@ -84,7 +95,7 @@ export default {
   methods: {
     // 指向登录模块
     goLogin () {
-      this.$router.push('/user/login')
+      // this.$router.push('/user/login')
     },
     onFocus () {
       $('.el-icon-search').css({ color: '#006cff' })
@@ -109,24 +120,4 @@ export default {
 </script>
 <style lang='scss'>
 @import '../assets/scss/Home.scss';
-
-.el-dropdown-link {
-    font-size: 16px;
-    color:#006cff;
-}
-.active-class {
-    color:#006cff !important;
-    a {
-        color:#006cff !important;
-    }
-}
-.dropdown-list {
-    padding: 0 5px;
-    font-size: 16px;
-    color: #71777c;
-    &:hover {
-        color:#006cff;
-    }
-}
-
 </style>

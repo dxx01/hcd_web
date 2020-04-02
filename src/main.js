@@ -8,6 +8,12 @@ import './assets/css/global.css'
 // 引入整个Element
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+
+// 引入Ueditor
+import VueUeditorWrap from 'vue-ueditor-wrap'
+// 全局注册Ueditor
+Vue.component('vue-ueditor-wrap', VueUeditorWrap)
+
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 

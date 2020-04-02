@@ -8,6 +8,10 @@ const routes = [
     path: '/',
     redirect: '/shouye'
   },
+  { // 发布地址
+    path: '/fabu',
+    component: () => import('../views/module/fabu.vue')
+  },
   { // 主页面地址
     path: '/home',
     component: () => import('../views/Home.vue'),
