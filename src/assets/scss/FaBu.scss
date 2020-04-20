@@ -1,14 +1,21 @@
+body {
+    height: 100%;
+}
 #fabu {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     .header {
+        height: 60px;
         display: flex;
         width: 100%;
         border-bottom: solid 1px #e6e6e6;
         .input {
             width: 100%;
-            margin-left: 30px;
+            padding-left: 30px;
             line-height: 60px;
             input {
-                width: 100%;
+                width: 99%;
                 height: 20px;
                 padding: 8px;
                 font-size: 20px;
@@ -34,6 +41,8 @@
     }
     .ueditor {
         padding: 0 8px 0 5px;
+        min-height: 200px;
+        flex: 1;
     }
 }
 

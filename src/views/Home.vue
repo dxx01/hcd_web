@@ -13,7 +13,7 @@
                           {{onActive}}<i class="el-icon-arrow-down el-icon--right"></i>
                       </span>
                       <el-dropdown-menu slot="dropdown">
-                          <el-dropdown-item :class="{'active-class': onActive == '首页'}" command='首页'><router-link class="dropdown-list"  to="/shouye">首页</router-link></el-dropdown-item>
+                          <el-dropdown-item :class="{'active-class': onActive == '首页'}" command='首页'><router-link class="dropdown-list"  to="/home/shouye">首页</router-link></el-dropdown-item>
                           <el-dropdown-item :class="{'active-class': onActive == '问答'}" command='问答'><router-link class="dropdown-list"  to="/home">问答</router-link></el-dropdown-item>
                           <el-dropdown-item :class="{'active-class': onActive == '生活'}" command='生活'><router-link class="dropdown-list"  to="/home">生活</router-link></el-dropdown-item>
                       </el-dropdown-menu>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="header-items">
                     <ul>
-                        <li><router-link :class="{'active-class': onActive == '首页'}" @click.native="toItem" to="/shouye">首页</router-link></li>
+                        <li><router-link :class="{'active-class': onActive == '首页'}" @click.native="toItem" to="/home/shouye">首页</router-link></li>
                         <li><router-link :class="{'active-class': onActive == '问答'}" @click.native="toItem" to="/home">问答</router-link></li>
                         <li><router-link :class="{'active-class': onActive == '生活'}" @click.native="toItem" to="/home">生活</router-link></li>
                     </ul>
@@ -35,11 +35,10 @@
                             <template slot="title">
                                 <el-avatar :src="userImg"  size="small"></el-avatar>
                             </template>
-                            <el-menu-item index="1-1">选项1</el-menu-item>
-                            <el-menu-item index="1-2">选项2</el-menu-item>
-                            <el-menu-item index="1-3">选项3</el-menu-item>
+                            <el-menu-item index="1-1"><router-link to="/home/myhome">我的主页</router-link></el-menu-item>
+                            <el-menu-item index="1-2">账号设置</el-menu-item>
                             <el-divider></el-divider>
-                            <el-menu-item index="1-4">选项4</el-menu-item>
+                            <el-menu-item index="1-4">退出</el-menu-item>
                         </el-submenu>
                       </el-menu>
                     </div>
@@ -48,13 +47,9 @@
                     <i class="el-icon-bell"></i>
                 </div>
                 <div class="header-create">
-                    <el-dropdown split-button type="primary"  size="small" trigger='click'>
-                        <router-link to="/fabu">发文章</router-link>
-                        <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item>提问</el-dropdown-item>
-                        <el-dropdown-item>生活</el-dropdown-item>
-                        </el-dropdown-menu>
-                    </el-dropdown>
+                  <el-button type="primary" size="small">
+                    <router-link to="/fabu">发布</router-link>
+                  </el-button>
                 </div>
                 <div class="header-search">
                     <el-input placeholder="请输入内容" v-model="search" suffix-icon="el-icon-search" size="small" @focus="onFocus" @blur="onBlur"></el-input>

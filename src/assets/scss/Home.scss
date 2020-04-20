@@ -33,6 +33,9 @@ a {
 
 #home {
     background-color: #f4f5f5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     .headerBox {
         width: 100%;
         height: 60px;
@@ -132,6 +135,7 @@ a {
         }
     }
     .middleBox {
+        flex: 1;
         margin-top: 20px;
     }
 }
@@ -173,6 +177,9 @@ a {
         }
         li {
             text-align: center;
+        }
+        a{
+            color: #909399;
         }
     }
 }

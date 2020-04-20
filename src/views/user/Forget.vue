@@ -21,7 +21,7 @@
             </el-form-item>
             <el-form-item label="" prop="pass">
                 <div class="lrf-lable">新密码</div>
-                <el-input type="password" v-model="forgetForm.pass" autocomplete="off" placeholder="请输入新密码" show-password clearable></el-input>
+                <el-input type="password" v-model="forgetForm.pass" autocomplete="off" placeholder="新密码不少于六位，至少包含数字 和 英文" show-password clearable></el-input>
             </el-form-item>
             <el-form-item>
                 <el-row type="flex" justify="center" style="margin-top:40px;">
@@ -66,7 +66,6 @@ export default {
       if (value === '') {
         callback(new Error('密码不能为空'))
       } else {
-        console.log(value.length)
         if (value.length < 6) {
           callback(new Error('密码不能少于6位'))
         } else if (value.length > 18) {
@@ -77,14 +76,11 @@ export default {
         callback()
       }
     }
-    // 邮箱处理
+    // 验证码处理
     var checkYzm = (rule, value, callback) => {
-      if (!value) {
+      if (value === '') {
         return callback(new Error('验证码不能为空'))
       } else {
-        if (value !== this.Yzm) {
-          return callback(new Error('验证码填写错误'))
-        }
         callback()
       }
     }

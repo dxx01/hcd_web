@@ -42,9 +42,9 @@ export default {
   props: [''],
   data () {
     return {
-      type: '1',
+      type: '',
       classify: '',
-      tag: '',
+      tag: [],
       classifys: [{
         classify: '1',
         name: '开发语言'
@@ -91,7 +91,14 @@ export default {
 
   mounted () {},
 
-  methods: {},
+  methods: {
+    // 情空选项
+    empty () {
+      this.type = ''
+      this.classify = ''
+      this.tag = []
+    }
+  },
 
   watch: {}
 

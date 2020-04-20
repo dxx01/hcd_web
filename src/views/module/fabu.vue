@@ -5,16 +5,16 @@
           <input type="text" id="title" placeholder="请输入文章标题...">
         </div>
         <div class="button">
-          <el-button type="text" @click="DialogVisible = true">发布文章</el-button>
+          <el-button type="text" @click="DialogVisible = true">发布</el-button>
           <el-dialog
             title="发布文章"
             :visible.sync="DialogVisible"
             width="500px"
             center>
-            <FL></FL>
+            <FL ref="fl"></FL>
             <span slot="footer" class="dialog-footer">
               <el-button @click="DialogVisible = false">取 消</el-button>
-              <el-button type="primary" @click="DialogVisible = false">确 定</el-button>
+              <el-button type="primary" @click="send()">确 定</el-button>
             </span>
           </el-dialog>
         </div>
@@ -49,7 +49,14 @@ export default {
   props: [''],
   data () {
     return {
-      DialogVisible: false
+      DialogVisible: false,
+      obj: {
+        title: '', // 标题
+        content: '', // 内容
+        type: '', // 类型
+        classify: '', // 分类
+        tag: [] // 标签
+      }
     }
   },
 
@@ -67,7 +74,43 @@ export default {
     $('#title').focus()
   },
 
-  methods: {},
+  methods: {
+    // 确认按钮
+    send () {
+      const pass = this.isPass()
+      if (pass === true) {
+        this.$refs.fl.empty() // 请空子组件选项
+        this.DialogVisible = false
+        console.log(JSON.parse(JSON.stringify(this.obj)))
+      }
+    },
+
+    // 对类型、分类和标签进行半段
+    isPass () {
+      // 判断类型
+      if (JSON.parse(JSON.stringify(this.$refs.fl.type)) === '') {
+        this.$message('请选择一个类型')
+        return false
+      } else {
+        this.obj.type = JSON.parse(JSON.stringify(this.$refs.fl.type))
+      }
+      // 判断分类
+      if (JSON.parse(JSON.stringify(this.$refs.fl.classify)) === '') {
+        this.$message('请选择一个分类')
+        return false
+      } else {
+        this.obj.classify = JSON.parse(JSON.stringify(this.$refs.fl.classify))
+      }
+      // 判断标签
+      if (JSON.parse(JSON.stringify(this.$refs.fl.tag)).length === 0) {
+        this.$message('请至少选择一个标签')
+        return false
+      } else {
+        this.obj.tag = JSON.parse(JSON.stringify(this.$refs.fl.tag))
+      }
+      return true
+    }
+  },
 
   watch: {}
 

@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   { // 项目默认地址
     path: '/',
-    redirect: '/shouye'
+    redirect: '/home/shouye'
   },
   { // 发布地址
     path: '/fabu',
@@ -17,8 +17,12 @@ const routes = [
     component: () => import('../views/Home.vue'),
     children: [
       {
-        path: '/shouye',
+        path: 'shouye',
         component: () => import('../views/module/ShouYe.vue')
+      },
+      { // 我的主页
+        path: 'myhome',
+        component: () => import('../views/module/MyHome.vue')
       }
     ]
   },
@@ -28,15 +32,15 @@ const routes = [
     component: () => import('../views/User.vue'),
     children: [
       { // 登录
-        path: '/user/login',
+        path: 'login',
         component: () => import('../views/user/Login.vue')
       },
       { // 注册
-        path: '/user/register',
+        path: 'register',
         component: () => import('../views/user/Register.vue')
       },
       { // 重置密码
-        path: '/user/forget',
+        path: 'forget',
         component: () => import('../views/user/Forget.vue')
       }
     ]
